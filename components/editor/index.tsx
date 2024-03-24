@@ -8,17 +8,14 @@
 
 import "./index.css";
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
-import { CharacterLimitPlugin } from "@lexical/react/LexicalCharacterLimitPlugin";
 import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin";
 import { ClearEditorPlugin } from "@lexical/react/LexicalClearEditorPlugin";
 import LexicalClickableLinkPlugin from "@lexical/react/LexicalClickableLinkPlugin";
-import { CollaborationPlugin } from "@lexical/react/LexicalCollaborationPlugin";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HashtagPlugin } from "@lexical/react/LexicalHashtagPlugin";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { HorizontalRulePlugin } from "@lexical/react/LexicalHorizontalRulePlugin";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
-import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
@@ -52,7 +49,6 @@ import { LayoutPlugin } from "./plugins/LayoutPlugin/LayoutPlugin";
 import LinkPlugin from "./plugins/LinkPlugin";
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import MarkdownShortcutPlugin from "./plugins/MarkdownShortcutPlugin";
-import { MaxLengthPlugin } from "./plugins/MaxLengthPlugin";
 import MentionsPlugin from "./plugins/MentionsPlugin";
 import PageBreakPlugin from "./plugins/PageBreakPlugin";
 import PollPlugin from "./plugins/PollPlugin";
@@ -62,14 +58,14 @@ import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import TableCellResizer from "./plugins/TableCellResizer";
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin";
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
-import TreeViewPlugin from "./plugins/TreeViewPlugin";
+// import TreeViewPlugin from "./plugins/TreeViewPlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
 import ContentEditable from "./ui/ContentEditable";
 import Placeholder from "./ui/Placeholder";
 import { CAN_USE_DOM } from "@/lib/canUseDOM";
 
-export default function Editor(): JSX.Element {
+export default function Editor() {
   const { historyState } = useSharedHistoryContext();
 
   const isEditable = useLexicalEditable();
@@ -175,7 +171,7 @@ export default function Editor(): JSX.Element {
             </>
           )}
         </>
-        <AutocompletePlugin />
+        {/* <AutocompletePlugin /> */}
         <div>
           <TableOfContentsPlugin />
         </div>
