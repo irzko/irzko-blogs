@@ -20,7 +20,7 @@ export default function Home() {
     <main>
       <LexicalComposer initialConfig={initialConfig}>
         <SharedHistoryContext>
-          <div className="max-w-screen-lg mx-auto">
+          <div className="max-w-screen-lg mx-auto relative">
             <Editor />
           </div>
         </SharedHistoryContext>

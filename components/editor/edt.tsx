@@ -6,7 +6,6 @@
  *
  */
 
-import "./index.css";
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
 import { CharacterLimitPlugin } from "@lexical/react/LexicalCharacterLimitPlugin";
 import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin";
@@ -68,6 +67,10 @@ import YouTubePlugin from "./plugins/YouTubePlugin";
 import ContentEditable from "./ui/ContentEditable";
 import Placeholder from "./ui/Placeholder";
 import { CAN_USE_DOM } from "@/lib/canUseDOM";
+
+const skipCollaborationInit =
+  // @ts-expect-error
+  window.parent != null && window.parent.frames.right === window;
 
 export default function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext();
@@ -180,9 +183,9 @@ export default function Editor(): JSX.Element {
           <TableOfContentsPlugin />
         </div>
         <ContextMenuPlugin />
-        <ActionsPlugin isRichText={true} />
+        <ActionsPlugin isRichText />
       </div>
-      {/* <TreeViewPlugin /> */}
+      <TreeViewPlugin />
     </>
   );
 }
